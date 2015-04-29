@@ -3,6 +3,10 @@
 exports.config = {
   allScriptsTimeout: 11000,
 
+  params: {
+    angularVersion: '1.3.0'
+  },
+
   specs: [
     'e2e/specs/*.js'
   ],
