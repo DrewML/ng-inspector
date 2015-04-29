@@ -1,5 +1,6 @@
 var path = require('path');
 var express = require('express');
+var colors = require('colors');
 
 function scenarioServer(port) {
 	var app = express();
@@ -19,7 +20,7 @@ function scenarioServer(port) {
 
 	return app.listen(3000, function () {
 	  var port = this.address().port;
-	  console.log('Serving scenarios on port %s', port);
+	  console.log('Serving scenarios on port %s'.green, port);
 	});
 };
 
