@@ -1,10 +1,21 @@
-// Docs for protractor 0.24:
-// https://github.com/angular/protractor/blob/8582b195ed0f4d48a0d9513017b21e99f8feb2fe/docs/api.md
+var JSONReporter = require('jasmine-json-test-reporter');
+var format = require('util').format;
+
 exports.config = {
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 2500,
 
   params: {
     angularVersion: '1.3.0'
+  },
+
+  framework: 'jasmine2',
+
+  onPrepare: function() {
+    browser.getProcessedConfig().then(function(config) {
+      jasmine.getEnv().addReporter(new JSONReporter({
+        file: format('test/e2e/test-results/%s.json', config.params.angularVersion)
+      }));
+    });
   },
 
   rootElement: 'div.angular-root-element',

@@ -1,0 +1,705 @@
+{
+    "1.0.6": {
+        "suite1": {
+            "id": "suite1",
+            "description": "anonymous app",
+            "fullName": "anonymous app",
+            "failedExpectations": [
+               {
+                   "matcherName": "toBe",
+                   "message": "Expected 1 to be 0.",
+                   "stack": "Error: Failed expectation\n    at Env.<anonymous> (/Users/admin/Documents/ng-inspector/test/e2e/specs/anon.js:11:13)\n    at /Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasminewd2/index.js:95:14\n    at [object Object].promise.ControlFlow.runInFrame_ (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)\n    at [object Object].promise.ControlFlow.runEventLoop_ (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1755:8)\n    at [object Object].<anonymous> (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2056:12)\n    at goog.async.run.processWorkQueue (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)\n    at runMicrotasksCallback (node.js:337:7)\n    at process._tickCallback (node.js:355:11)",
+                   "passed": false,
+                   "expected": 0,
+                   "actual": 1
+               }
+           ],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec0",
+                    "description": "should inspect the anonymous app",
+                    "fullName": "anonymous app should inspect the anonymous app",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                },
+                {
+                    "id": "spec1",
+                    "description": "should inspect the root scope",
+                    "fullName": "anonymous app should inspect the root scope",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite2": {
+            "id": "suite2",
+            "description": "bootstrap with a jquery object",
+            "fullName": "bootstrap with a jquery object",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec2",
+                    "description": "should inspect the directive in a dependency",
+                    "fullName": "bootstrap with a jquery object should inspect the directive in a dependency",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite3": {
+            "id": "suite3",
+            "description": "detect circular references",
+            "fullName": "detect circular references",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec3",
+                    "description": "should detect a circular reference",
+                    "fullName": "detect circular references should detect a circular reference",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite4": {
+            "id": "suite4",
+            "description": "collapse and expand treeview items",
+            "fullName": "collapse and expand treeview items",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec4",
+                    "description": "should expand and collapse object models",
+                    "fullName": "collapse and expand treeview items should expand and collapse object models",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                },
+                {
+                    "id": "spec5",
+                    "description": "should expand and collapse array models",
+                    "fullName": "collapse and expand treeview items should expand and collapse array models",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                },
+                {
+                    "id": "spec6",
+                    "description": "should expand and collapse nested objects and arrays",
+                    "fullName": "collapse and expand treeview items should expand and collapse nested objects and arrays",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite5": {
+            "id": "suite5",
+            "description": "dependency",
+            "fullName": "dependency",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec7",
+                    "description": "should inspect the directive in a dependency",
+                    "fullName": "dependency should inspect the directive in a dependency",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite6": {
+            "id": "suite6",
+            "description": "identify directives declared with the object style",
+            "fullName": "identify directives declared with the object style",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec8",
+                    "description": "should expand and collapse object models",
+                    "fullName": "identify directives declared with the object style should expand and collapse object models",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite7": {
+            "id": "suite7",
+            "description": "empty directive",
+            "fullName": "empty directive",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec9",
+                    "description": "should not throw exception when directive with empty DDO is used",
+                    "fullName": "empty directive should not throw exception when directive with empty DDO is used",
+                    "failedExpectations": [],
+                    "passedExpectations": [],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite8": {
+            "id": "suite8",
+            "description": "require.js",
+            "fullName": "require.js",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec10",
+                    "description": "should inspect app loaded with require.js",
+                    "fullName": "require.js should inspect app loaded with require.js",
+                    "failedExpectations": [
+                        {
+                            "matcherName": "",
+                            "message": "Failed: Angular could not be found on the page http://localhost:3000/app/requirejs/1.0.6 : angular never provided resumeBootstrap",
+                            "stack": "Error: Failed: Angular could not be found on the page http://localhost:3000/app/requirejs/1.0.6 : angular never provided resumeBootstrap\n    at stack (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1441:17)\n    at buildExpectationResult (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1411:14)\n    at Spec.Env.expectationResultFactory (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:533:18)\n    at Spec.addExpectationResult (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:293:34)\n    at Env.fail (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:837:25)\n    at Function.next.fail (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1776:19)\n    at /Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasminewd2/index.js:102:16\n    at [object Object].promise.ControlFlow.runInFrame_ (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)\n    at [object Object].promise.Callback_.goog.defineClass.notify (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)\n    at [object Object].promise.Promise.notify_ (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)",
+                            "passed": false,
+                            "expected": "",
+                            "actual": ""
+                        },
+                        {
+                            "matcherName": "",
+                            "message": "Failed: Error while waiting for Protractor to sync with the page: \"root element (div.angular-root-element) has no injector. this may mean it is not inside ng-app.\"",
+                            "stack": "Error: Failed: Error while waiting for Protractor to sync with the page: \"root element (div.angular-root-element) has no injector. this may mean it is not inside ng-app.\"\n    at stack (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1441:17)\n    at buildExpectationResult (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1411:14)\n    at Spec.Env.expectationResultFactory (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:533:18)\n    at Spec.addExpectationResult (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:293:34)\n    at Env.fail (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:837:25)\n    at Function.next.fail (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1776:19)\n    at /Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/jasminewd2/index.js:102:16\n    at [object Object].promise.ControlFlow.runInFrame_ (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)\n    at [object Object].promise.Callback_.goog.defineClass.notify (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)\n    at [object Object].promise.Promise.notify_ (/Users/admin/Documents/ng-inspector/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)",
+                            "passed": false,
+                            "expected": "",
+                            "actual": ""
+                        }
+                    ],
+                    "passedExpectations": [],
+                    "status": "failed"
+                }
+            ]
+        },
+        "suite9": {
+            "id": "suite9",
+            "description": "strict di",
+            "fullName": "strict di",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec11",
+                    "description": "should not throw an error when unannotated directive is used",
+                    "fullName": "strict di should not throw an error when unannotated directive is used",
+                    "failedExpectations": [],
+                    "passedExpectations": [],
+                    "status": "passed"
+                }
+            ]
+        }
+    },
+    "1.3.0": {
+        "suite1": {
+            "id": "suite1",
+            "description": "anonymous app",
+            "fullName": "anonymous app",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec0",
+                    "description": "should inspect the anonymous app",
+                    "fullName": "anonymous app should inspect the anonymous app",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                },
+                {
+                    "id": "spec1",
+                    "description": "should inspect the root scope",
+                    "fullName": "anonymous app should inspect the root scope",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite2": {
+            "id": "suite2",
+            "description": "bootstrap with a jquery object",
+            "fullName": "bootstrap with a jquery object",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec2",
+                    "description": "should inspect the directive in a dependency",
+                    "fullName": "bootstrap with a jquery object should inspect the directive in a dependency",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite3": {
+            "id": "suite3",
+            "description": "detect circular references",
+            "fullName": "detect circular references",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec3",
+                    "description": "should detect a circular reference",
+                    "fullName": "detect circular references should detect a circular reference",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite4": {
+            "id": "suite4",
+            "description": "collapse and expand treeview items",
+            "fullName": "collapse and expand treeview items",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec4",
+                    "description": "should expand and collapse object models",
+                    "fullName": "collapse and expand treeview items should expand and collapse object models",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                },
+                {
+                    "id": "spec5",
+                    "description": "should expand and collapse array models",
+                    "fullName": "collapse and expand treeview items should expand and collapse array models",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                },
+                {
+                    "id": "spec6",
+                    "description": "should expand and collapse nested objects and arrays",
+                    "fullName": "collapse and expand treeview items should expand and collapse nested objects and arrays",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite5": {
+            "id": "suite5",
+            "description": "dependency",
+            "fullName": "dependency",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec7",
+                    "description": "should inspect the directive in a dependency",
+                    "fullName": "dependency should inspect the directive in a dependency",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite6": {
+            "id": "suite6",
+            "description": "identify directives declared with the object style",
+            "fullName": "identify directives declared with the object style",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec8",
+                    "description": "should expand and collapse object models",
+                    "fullName": "identify directives declared with the object style should expand and collapse object models",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite7": {
+            "id": "suite7",
+            "description": "empty directive",
+            "fullName": "empty directive",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec9",
+                    "description": "should not throw exception when directive with empty DDO is used",
+                    "fullName": "empty directive should not throw exception when directive with empty DDO is used",
+                    "failedExpectations": [],
+                    "passedExpectations": [],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite8": {
+            "id": "suite8",
+            "description": "require.js",
+            "fullName": "require.js",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec10",
+                    "description": "should inspect app loaded with require.js",
+                    "fullName": "require.js should inspect app loaded with require.js",
+                    "failedExpectations": [],
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        },
+                        {
+                            "matcherName": "toBe",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "status": "passed"
+                }
+            ]
+        },
+        "suite9": {
+            "id": "suite9",
+            "description": "strict di",
+            "fullName": "strict di",
+            "failedExpectations": [],
+            "status": "finished",
+            "specs": [
+                {
+                    "id": "spec11",
+                    "description": "should not throw an error when unannotated directive is used",
+                    "fullName": "strict di should not throw an error when unannotated directive is used",
+                    "failedExpectations": [],
+                    "passedExpectations": [],
+                    "status": "passed"
+                }
+            ]
+        }
+    }
+}

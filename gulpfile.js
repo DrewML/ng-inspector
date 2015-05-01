@@ -8,9 +8,12 @@ var fs = require('fs');
 var colors = require('colors');
 var plist = require('plist');
 var spawn = require('child_process').spawn;
-var protractor = require('gulp-angular-protractor');
-var webserver = require('gulp-webserver');
 var scenarioServer = require('./test/e2e/scenarios/scenario-server');
+var path = require('path');
+var format = require('util').format;
+var del = require('del');
+var gulpArgs = require('minimist')(process.argv.slice());
+var TEST_RESULTS_PATH = 'test/e2e/test-results';
 
 function run(cmd, args, callback) {
 	var child = spawn(cmd, args);
@@ -133,20 +136,149 @@ gulp.task('scenarios', function() {
 	scenarioServer(3000);
 });
 
-gulp.task('test', function(cb) {
-	var server = scenarioServer(3000);
+function getAngularVersions(versionsDir) {
+	return fs.readdirSync(versionsDir)
+		.filter(function(filename) {
+			return path.extname(filename) === '.js';
+		})
+		.map(function(filename) {
+			return path.basename(filename, '.min.js');
+		});
+};
 
-	gulp.src(['test/e2e/specs/*.js'])
-		.pipe(protractor({
-		    'configFile': 'test/protractor.conf.js',
-		    'autoStartStopServer': true
-		}))
-		.on('error', function(e) { throw e })
-		.on('end', function() {
+function getProtractorBinary(binaryName){
+    var winExt = /^win/.test(process.platform)? '.cmd' : '';
+    var pkgPath = require.resolve('protractor');
+    var protractorDir = path.resolve(path.join(path.dirname(pkgPath), '..', 'bin'));
+    return path.join(protractorDir, format('/%s%s', binaryName, winExt));
+}
+
+function runProtractorWithVersion(version, cb) {
+	var args = ['test/protractor.conf.js', format('--params.angularVersion=%s', version)];
+	require('child_process').spawn(getProtractorBinary('protractor'), args, {
+	    stdio: gulpArgs['protractorOutput'] ? 'inherit' : 'ignore'
+	}).once('close', cb);
+};
+
+gulp.task('run-tests', ['default', 'clean:test-results'], function(cb) {
+	var VERSIONS_DIR = 'test/e2e/scenarios/lib/angular';
+	var optionalVersion = gulpArgs.ngversion;
+	var availableVersions = getAngularVersions(VERSIONS_DIR);
+	var versionsToTest = [];
+
+	if (optionalVersion && !~availableVersions.indexOf(optionalVersion)) {
+		throw new Error(format(
+			'Angular version not found. Versions must exist in %s', TEST_RESULTS_PATH
+		));
+	};
+
+	if (optionalVersion) versionsToTest.push(optionalVersion);
+	else versionsToTest = availableVersions.slice();
+
+	var server = scenarioServer(3000);
+	var lastVersion = versionsToTest[versionsToTest.length - 1];
+
+	var runProtractors = function(angularVersions) {
+		var versions = angularVersions.slice();
+		var currentVersion = versions.shift();
+		runProtractorWithVersion(currentVersion, function(err) {
+			if (versions.length) return runProtractors(versions);
 			server.close();
 			cb();
 		});
+	};
+
+	runProtractors(versionsToTest);
 });
+
+gulp.task('test', ['echo-test-results']);
+
+gulp.task('clean:test-results', function(cb) {
+	del([format('%s/**/*', TEST_RESULTS_PATH)], cb);
+});
+
+/*1.0.6
+	Suite: Anonymous App
+	Failed after-alls
+		message
+	Failed specs (spec where status === failed)
+		description: should inspect anonymous app
+			Failed expectation(s) messages
+
+1.1.4
+	Suite: Anonymous App
+	Failed after-alls
+		message
+	Failed specs (spec where status === failed)
+		description: should inspect anonymous app
+			Failed expectation(s) messages
+
+1.2.0
+	Suite: Anonymous App
+	Failed after-alls
+		message
+	Failed specs (spec where status === failed)
+		description: should inspect anonymous app
+			Failed expectation(s) messages
+
+1.3.0
+	Suite: Anonymous App
+	Failed after-alls
+		message
+	Failed specs (spec where status === failed)
+		description: should inspect anonymous app
+			Failed expectation(s) messages*/
+
+gulp.task('echo-test-results', /*['run-tests'],*/ function(cb) {
+	var testVersionsAvailable = fs.readdirSync(TEST_RESULTS_PATH)
+		.filter(function(filename) {
+			return path.extname(filename) === '.json';
+		})
+		.map(function(filename) {
+			var version = path.basename(filename, '.json');
+			return {
+				version: version,
+				filePath: format('%s/%s.json', TEST_RESULTS_PATH, version)
+			};
+		});
+	
+	var fullTestHistory = Object.create(null);
+	testVersionsAvailable.forEach(function(angularVersion) {
+		var testResults = JSON.parse(fs.readFileSync(angularVersion.filePath, 'utf-8'));
+		fullTestHistory[angularVersion.version] = testResults;
+	});
+
+	var friendlyResults = {};
+
+	Object.keys(fullTestHistory).forEach(function(version) {
+		var currentVersion = fullTestHistory[version];
+		var failedSuites = [];
+
+		Object.keys(currentVersion).forEach(function(suiteKey) {
+			var suite = currentVersion[suiteKey];
+			var failedSpecs = suite.specs.filter(function(spec) {
+				return spec.status !== 'passed';
+			});
+			var suiteSummary = {
+				name: suite.fullName,
+				failedAfterAlls: suite.failedExpectations,
+				// TODO: Look into why Protractor reports a suite as "passed" when a spec in it has failed.
+				// For now, we do the check below, rather than suite.status !== 'passed', since it's unreliable
+				passed: !suite.failedExpectations.length && !failedSpecs.length,
+				failedSpecs: failedSpecs
+			};
+			if (!suiteSummary.passed) failedSuites.push(suiteSummary);
+		});
+
+
+		friendlyResults[version] = failedSuites;
+	});
+	
+	fs.writeFileSync('things.json', JSON.stringify(friendlyResults, null, 4));
+
+	cb();
+});
+
 
 // Here would be a good place to build the Safari archive. But it requires a
 // custom build of the `xar` executable to extract certificates from a

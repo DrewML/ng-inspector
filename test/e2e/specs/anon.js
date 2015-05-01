@@ -7,6 +7,10 @@ describe('anonymous app', function() {
 		element(by.id('ngInspectorToggle')).click();
 	});
 
+	afterAll(function() {
+		expect(1).toBe(0);
+	});
+
 	var ROOT_ELEMENT = 'div.angular-root-element';
 
 	it('should inspect the anonymous app', function() {
